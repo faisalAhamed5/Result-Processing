@@ -1,11 +1,11 @@
-modeles.exports={
+models.exports = {
   "development": {
     "username": "test",
     "password": '123',
     "database": "results",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "port":5432
+    "port": 5432
   },
   "test": {
     "username": "root",
@@ -21,4 +21,4 @@ modeles.exports={
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-}
+};
