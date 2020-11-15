@@ -1,4 +1,4 @@
-models.exports = {
+module.exports = {
   "development": {
     "username": "test",
     "password": '123',
