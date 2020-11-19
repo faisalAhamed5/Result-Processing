@@ -20,6 +20,9 @@ module.exports = {
       dept_id: {
         type: Sequelize.CHAR
       },
+      credit: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

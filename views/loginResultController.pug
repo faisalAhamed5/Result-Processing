@@ -1,9 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  h3 Welcome to #{title} Result Hive
-  h4 Please Login to enter
+
   form(action="/",method="POST")
     input(name="email",type="email",placeholder="Enter email address")
     br
@@ -12,6 +10,3 @@ block content
     br
     br
     button(type="submit") Submit
-    br 
-    br
-    a(href='/loginResultController') Google
