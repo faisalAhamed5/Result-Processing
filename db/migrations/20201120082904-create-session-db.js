@@ -1,26 +1,20 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('president_db', {
+    await queryInterface.createTable('session_dbs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      dept_id: {
-        type: Sequelize.CHAR
-      },
-      t_name: {
-        type: Sequelize.CHAR
-      },
-      t_email: {
-        type: Sequelize.STRING
-      },
       session_id: {
         type: Sequelize.CHAR
       },
-      semester: {
+      month: {
+        type: Sequelize.CHAR
+      },
+      year: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -34,6 +28,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('president_db');
+    await queryInterface.dropTable('session_dbs');
   }
 };

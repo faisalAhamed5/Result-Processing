@@ -1,18 +1,21 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('webmaster_db', {
+    await queryInterface.createTable('sub_assign_dbs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      m_email: {
-        type: Sequelize.STRING
+      t_name: {
+        type: Sequelize.CHAR
       },
-      m_pass: {
-        type: Sequelize.STRING
+      sem_sub_id: {
+        type: Sequelize.CHAR
+      },
+      session_id: {
+        type: Sequelize.CHAR
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +28,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('webmaster_db');
+    await queryInterface.dropTable('sub_assign_dbs');
   }
 };

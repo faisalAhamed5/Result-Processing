@@ -1,27 +1,33 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('subject_db', {
+    await queryInterface.createTable('student_dbs', {
       id: {
         allowNull: false,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
       },
-      sub_id: {
-        type: Sequelize.CHAR,
-        primaryKey: true
-      },
-      sub_name: {
-        type: Sequelize.CHAR
-      },
-      sub_code: {
-        type: Sequelize.CHAR
+      s_name: {
+        type: Sequelize.STRING
       },
       dept_id: {
         type: Sequelize.CHAR
       },
-      credit: {
+      batch: {
         type: Sequelize.INTEGER
+      },
+      exam_roll: {
+        type: Sequelize.INTEGER
+      },
+      reg_no: {
+        type: Sequelize.CHAR
+      },
+      degree: {
+        type: Sequelize.CHAR
+      },
+      s_id: {
+        type: Sequelize.NUMERIC
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +40,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('subject_db');
+    await queryInterface.dropTable('student_dbs');
   }
 };

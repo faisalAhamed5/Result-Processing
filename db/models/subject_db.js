@@ -17,8 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     sub_id: DataTypes.CHAR,
     sub_name: DataTypes.CHAR,
     sub_code: DataTypes.CHAR,
-    dept_id: DataTypes.CHAR,
-    credit:DataTypes.INTEGER
+    dept_id: DataTypes.CHAR
   }, {
     sequelize,
     modelName: 'subject_db',

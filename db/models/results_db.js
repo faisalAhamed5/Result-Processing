@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     t2: DataTypes.NUMERIC,
     m1: DataTypes.NUMERIC,
     attendance: DataTypes.NUMERIC,
-    exam_category: DataTypes.CHAR,
+    exam_type: DataTypes.CHAR,
     s_id: DataTypes.NUMERIC
   }, {
     sequelize,

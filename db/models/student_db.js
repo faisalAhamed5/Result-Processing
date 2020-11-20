@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   student_db.init({
-    s_id:DataTypes.INTEGER,
     s_name: DataTypes.STRING,
     dept_id: DataTypes.CHAR,
     batch: DataTypes.INTEGER,
     exam_roll: DataTypes.INTEGER,
     reg_no: DataTypes.CHAR,
-    degree: DataTypes.CHAR
+    degree: DataTypes.CHAR,
+    s_id: DataTypes.NUMERIC
   }, {
     sequelize,
     modelName: 'student_db',
