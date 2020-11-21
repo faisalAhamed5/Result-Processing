@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h3 Created Admins
+  table
+    tr
+      th Name
+      th Email
+    for admin in admins
+      tr
+        td #{admin.admin_name}
+        td #{admin.admin_email}

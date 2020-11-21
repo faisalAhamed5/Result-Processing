@@ -15,9 +15,15 @@ exports.ResultController_adminCreate_submit = function (req, res, next) {
         admin_pass: req.body.password,
         dept_id: req.body.dept
     }).then(admin => {
-        res.render('adminCreate');
+        res.redirect('/ResultController/Admins');
     });
     
+};
+
+exports.ShowAdmins= function (req, res, next) {
+    return model.admin_db.findAll().then(admins => {
+        res.render('admins', { admins: admins });
+    });
 };
 
 
