@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h2 Create Role
+  form(action="/createRole",method="POST")
+    input(name="role_id",type="text",placeholder="Enter Role ID")
+    br
+    br
+    input(name="role",type="text",placeholder="Enter Role name")
+    br
+    br
+    button(type="submit") Submit
+    br 
+    br

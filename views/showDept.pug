@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h2 Created Departments
+  table
+    tr
+      th Dept ID
+      th Dept Name
+      th Degree
+    for dept in depts
+      tr
+        th #{dept.dept_id}
+        th #{dept.dept_name}
+        th #{dept.degree}

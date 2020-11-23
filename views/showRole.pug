@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Created Roles
+  table
+    tr
+      th Role ID
+      th Role Name
+    for role in roles
+      tr
+        th #{role.role_id}
+        th #{role.role}
+

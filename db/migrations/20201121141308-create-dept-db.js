@@ -1,20 +1,23 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('sub_assign_dbs', {
+    await queryInterface.createTable('dept_dbs', {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
       },
-      t_name: {
+      dept_id: {
+        allowNull: false,
+        type: Sequelize.CHAR,
+        primaryKey: true
+      },
+      dept_name: {
+        allowNull: false,
         type: Sequelize.CHAR
       },
-      sem_sub_id: {
-        type: Sequelize.CHAR
-      },
-      session_id: {
+      degree: {
+        allowNull: false,
         type: Sequelize.CHAR
       },
       createdAt: {
@@ -28,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('sub_assign_dbs');
+    await queryInterface.dropTable('dept_dbs');
   }
 };

@@ -1,24 +1,20 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('result_con_dbs', {
+    await queryInterface.createTable('role_dbs', {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      cont_name: {
-        type: Sequelize.CHAR
-      },
-      cont_email: {
-        type: Sequelize.STRING
-      },
-      cont_pass: {
-        type: Sequelize.STRING
       },
       role_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.CHAR
+      },
+      role: {
+        allowNull: false,
+        type: Sequelize.CHAR
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +27,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('result_con_dbs');
+    await queryInterface.dropTable('role_dbs');
   }
 };

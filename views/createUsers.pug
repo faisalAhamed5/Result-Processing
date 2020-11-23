@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h2 Create Users
+  form(action="/createUsers",method="POST")
+    input(name="name",type="text",placeholder="Enter username name")
+    br
+    br
+    input(name="email",type="email",placeholder="Enter email address")
+    br
+    br
+    input(name="password",type="password",placeholder="Enter Password")
+    br
+    br
+    select(name="dept")
+      for dept in depts
+        option #{dept.dept_id}
+    br
+    br
+    select(name="role")
+      for role in roles
+        option #{role.role_id}
+    br
+    br
+    button(type="submit") Submit
+    br 
+    br

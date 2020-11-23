@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 Created users
+  table
+    tr
+      th Username
+      th Email
+      th Dept
+      th Role
+    for user in users
+      tr
+        th #{user.username}
+        th #{user.email}
+        th #{user.dept_id}
+        th #{user.role_id}

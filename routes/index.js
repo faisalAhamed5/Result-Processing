@@ -4,15 +4,36 @@ var router = express.Router();
 var index = require('../controllers/index');
 /* GET home page. */
 router.get('/', index.index_get);
-/*//router.post('/', index.index_submit);
-router.get('/loginResultController', index.login_result_controller_get);
-//router.post('/loginResultController', index.login_result_controller_submit);
-router.get('/loginStudent', index.login_student_get);
-//router.post('/loginStudent', index.login_student_submit);
-router.get('/loginTeacher', index.login_teacher_get);
-//router.post('/loginTeacher', index.login_teacher_submit);
-router.get('/loginAdmin', index.login_admin_get);
-//router.post('/loginAdmin', index.login_admin_submit);
+
+router.get('/login', index.login);
+router.post('/login', index.login_submit);
+
+router.get('/webmaster', index.webmaster);
+
+router.get('/createUsers', index.createUsers);
+router.post('/createUsers', index.createUsers_submit);
+
+router.get('/showUsers', index.showUsers);
+
+router.get('/createDept', index.createDept);
+router.post('/createDept', index.Dept_submit);
+
+router.get('/showDept', index.showDept);
+
+router.get('/createRole', index.createRole);
+router.post('/createRole', index.Role_submit);
+
+router.get('/showRole', index.showRole);
+
+/*
+router.get('/createTeacher', index.createTeacher);
+router.post('/createTeacher', index.createTeacher);
+router.get('/createAdmin', index.createAdmin);
+router.post('/createAdmin', index.createAdmin);
+router.get('/createStudent', index.createStudent);
+router.post('/createStudent', index.createStudent);
+router.get('/createResultCon', index.createResultCon);
+router.post('/createResultCon', index.createResultCon);
 
 */
 module.exports = router;
