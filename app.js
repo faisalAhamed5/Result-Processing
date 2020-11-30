@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var passport = require('passport');
-//var session = ('express-session');
+var passport = require('passport');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var ResultController = require('./routes/ResultController');
@@ -12,7 +12,7 @@ var admin = require('./routes/Admin');
 var teacher = require('./routes/Teacher');
 var student = require('./routes/Student');
 
-//require('./passport_setup')(passport);
+require('./passport_setup')(passport);
 
 var app = express();
 
@@ -26,9 +26,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use(session({ secret: 'our new session' }));
-//app.use(passport.initialize());
-//app.use(passport.session());
+
+//session
+const TWO_HOURS = 1000 * 60 * 60 * 1;
+const { Node_env = 'development',
+  SESS_lifetime = TWO_HOURS,
+  SESS_NAME = 'sid',
+  SESS_SECRET='resultPros/All/'
+} = process.env;
+const IN_PROD = Node_env === 'production';
+app.use(session({
+  name: SESS_NAME,
+  resave: false,
+  saveUninitialized: false,
+  secret:SESS_SECRET,
+  cookie: {
+    maxAge: SESS_lifetime,
+    sameSite: true,
+    secure: IN_PROD,
+  }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use('/', indexRouter);

@@ -1,5 +1,8 @@
 var model = require('../db/models');
-const role_db = require('../db/models/role_db');
+var bcrypt = require('bcrypt');
+const passport = require('passport');
+const myPassport = require('../passport_setup')(passport);
+var flash = require('connect-flash');
 
 //index page
 
@@ -22,6 +25,13 @@ exports.webmaster = function (req, res, next) {
     res.render('webmaster');
 };
 
+//hash
+const generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+
+
 //create users page
 
 exports.createUsers = function (req, res, next) {
@@ -34,17 +44,19 @@ exports.createUsers = function (req, res, next) {
      
     
 };
+
 exports.createUsers_submit = function (req, res, next) {
     return model.user_db.create({
         username: req.body.name,
         email: req.body.email,
-        pass: req.body.password,
+        pass: generateHash(req.body.password),
         dept_id: req.body.dept,
         role_id: req.body.role
-    }).then(admin => {
-        res.redirect('/showUsers');
+    }).then(user => {
+        res.redirect('showUsers');
     });
-};
+}
+
 
 //show Users
 exports.showUsers= function (req, res, next) {

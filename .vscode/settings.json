@@ -3,6 +3,7 @@
         "depts",
         "gono",
         "postgres",
+        "resave",
         "sequelize"
     ]
 }
