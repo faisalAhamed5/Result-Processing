@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
 var session = require('express-session');
-
+var flash = require('connect-flash');
 var indexRouter = require('./routes/index');
 var ResultController = require('./routes/ResultController');
 var admin = require('./routes/Admin');
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use(flash());
 //session
 const TWO_HOURS = 1000 * 60 * 60 * 1;
 const { Node_env = 'development',

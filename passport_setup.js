@@ -4,7 +4,7 @@ let bcrypt = require('bcrypt');
 let models = require('./db/models');
 
 const validPassword = function (user, password) {
-	return bcrypt.compareSync(password, user.password);
+	return bcrypt.compareSync(password, user.pass);
 };
 module.exports = function (passport) {
 	passport.serializeUser(function (user, done) {
@@ -27,7 +27,7 @@ module.exports = function (passport) {
 		passwordField: 'password',
 		passReqToCallback: true
 	},
-		function (req, email, password, done) {
+		function (req, email, pass, done) {
 			return models.user_db.findOne({
 				where: {
 					'email': email
@@ -36,10 +36,10 @@ module.exports = function (passport) {
 				if (user == null) {
 					req.flash('message', 'Incorrect credentials.');
 					return done(null, false);
-				} else if (user.password == null || user.password == undefined) {
+				} else if (user.pass == null || user.pass == undefined) {
 					req.flash('message', 'You must reset your password');
 					return done(null, false);
-				} else if (!validPassword(user, password)) {
+				} else if (!validPassword(user, pass)) {
 					req.flash('message', 'Incorrect credentials');
 					return done(null, false);
 				}

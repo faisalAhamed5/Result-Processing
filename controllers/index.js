@@ -2,7 +2,11 @@ var model = require('../db/models');
 var bcrypt = require('bcrypt');
 const passport = require('passport');
 const myPassport = require('../passport_setup')(passport);
-var flash = require('connect-flash');
+
+//hash
+const generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
 //index page
 
@@ -10,14 +14,7 @@ exports.index_get = function (req, res, next) {
     res.render('index', { title: 'GONO UNIVERSITY' });
 };
 
-//login page
 
-exports.login = function (req, res, next) {
-    res.render('login');
-};
-exports.login_submit = function (req, res, next) {
-    res.render('login');
-};
 
 //webmaster index page
 
@@ -25,10 +22,6 @@ exports.webmaster = function (req, res, next) {
     res.render('webmaster');
 };
 
-//hash
-const generateHash = function (password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
 
 
 
@@ -55,7 +48,7 @@ exports.createUsers_submit = function (req, res, next) {
     }).then(user => {
         res.redirect('showUsers');
     });
-}
+};
 
 
 //show Users
@@ -109,3 +102,37 @@ exports.showRole= function (req, res, next) {
         res.render('showRole', { roles: roles });
     });
 };
+
+//login page
+
+exports.login = function (req, res, next) {
+    res.render('login.pug');
+};
+exports.login_submit = function (req, res, next) {
+    passport.authenticate('local', {
+        successRedirect: "/webmaster",
+        failureRedirect: "/login",
+        failureFlash: true
+    })(req, res, next);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
