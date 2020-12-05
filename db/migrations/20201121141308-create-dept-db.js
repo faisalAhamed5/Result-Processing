@@ -9,16 +9,16 @@ module.exports = {
       },
       dept_id: {
         allowNull: false,
-        type: Sequelize.CHAR,
+        type: Sequelize.STRING,
         primaryKey: true
       },
       dept_name: {
         allowNull: false,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       degree: {
         allowNull: false,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -9,7 +9,7 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       email: {
         allowNull: false,
@@ -22,11 +22,11 @@ module.exports = {
       },
       role_id: {
         allowNull: false,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       dept_id: {
         
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

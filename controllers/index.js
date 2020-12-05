@@ -11,7 +11,7 @@ const generateHash = function (password) {
 //index page
 
 exports.index_get = function (req, res, next) {
-    res.render('index', { title: 'GONO UNIVERSITY' });
+    res.render('index', { title: 'GONO UNIVERSITY',user:req.user });
 };
 
 
@@ -117,7 +117,12 @@ exports.login_submit = function (req, res, next) {
 };
 
 
-
+//logout
+exports.logout = function (req, res, next) {
+    req.logout();
+    req.session.destroy();
+    res.redirect('/');
+};
 
 
 

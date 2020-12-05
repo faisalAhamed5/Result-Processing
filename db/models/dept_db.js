@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   dept_db.init({
-    dept_id: DataTypes.CHAR,
-    dept_name: DataTypes.CHAR,
-    degree: DataTypes.CHAR
+    dept_id: DataTypes.STRING,
+    dept_name: DataTypes.STRING,
+    degree: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'dept_db',

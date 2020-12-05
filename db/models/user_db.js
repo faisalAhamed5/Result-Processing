@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   user_db.init({
-    username: DataTypes.CHAR,
+    username: DataTypes.STRING,
     email: DataTypes.STRING,
     pass: DataTypes.STRING,
-    role_id: DataTypes.CHAR,
-    dept_id: DataTypes.CHAR
+    role_id: DataTypes.STRING,
+    dept_id: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'user_db',

@@ -10,11 +10,11 @@ module.exports = {
       role_id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       role: {
         allowNull: false,
-        type: Sequelize.CHAR
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
