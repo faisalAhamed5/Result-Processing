@@ -58,6 +58,20 @@ exports.showUsers= function (req, res, next) {
     });
 };
 
+//Delete Users
+
+exports.DeleteUsers= function (req, res, next) {
+    return model.user_db.destroy({
+        where: {
+			id: req.params.user_id
+        }
+    }).then(users => {
+        res.redirect('/showUsers');
+    });
+};
+
+
+
 //create dept page
 
 exports.createDept= function (req, res, next) {
@@ -81,6 +95,20 @@ exports.showDept= function (req, res, next) {
     });
 };
 
+
+//Delete depts
+
+exports.DeleteDept= function (req, res, next) {
+    return model.dept_db.destroy({
+        where: {
+			id: req.params.dept_id
+        }
+    }).then(depts => {
+        res.redirect('/showDept');
+    });
+};
+
+
 //Create Roles
 
 exports.createRole= function (req, res, next) {
@@ -95,6 +123,9 @@ exports.Role_submit= function (req, res, next) {
     });
 };
 
+
+
+
 //show Roles
 
 exports.showRole= function (req, res, next) {
@@ -102,6 +133,20 @@ exports.showRole= function (req, res, next) {
         res.render('showRole', { roles: roles });
     });
 };
+
+//Delete Roles
+
+exports.DeleteRole= function (req, res, next) {
+    return model.role_db.destroy({
+        where: {
+			id: req.params.role_id
+        }
+    }).then(roles => {
+        res.redirect('/showRole');
+    });
+};
+
+
 
 //login page
 

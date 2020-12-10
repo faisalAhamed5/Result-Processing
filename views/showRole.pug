@@ -4,10 +4,13 @@ block content
   h2 Created Roles
   table
     tr
-      th Role ID
-      th Role Name
+      th(scope="col") Role ID
+      th(scope="col") Role Name
     for role in roles
       tr
-        th #{role.role_id}
-        th #{role.role}
+        th(scope="col") #{role.role_id}
+        th(scope="col") #{role.role}
+        th
+          form(action="/showRole/"+role.id+"/delete",method="POST")
+            button(type="submit") Delete
 

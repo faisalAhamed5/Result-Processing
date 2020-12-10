@@ -14,3 +14,6 @@ block content
         th #{user.email}
         th #{user.dept_id}
         th #{user.role_id}
+        th(scope="col")
+          form(action="/showUsers/"+user.id+"/delete",method="POST")
+            button(type="submit") Delete
