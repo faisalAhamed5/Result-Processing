@@ -19,8 +19,13 @@ router.post('/login', index.login_submit);
 router.get('/logout', index.logout);
 router.post('/logout', index.logout);
 
+//Dashboard
+router.get('/DashBoard', index.dashBoard);
 
-router.get('/webmaster',isLoggedIn,hasAuthWebmaster, index.webmaster);
+
+
+router.get('/webmaster', isLoggedIn, hasAuthWebmaster, index.webmaster);
+
 
 router.get('/createUsers',hasAuthWebmaster, index.createUsers);
 router.post('/createUsers', hasAuthWebmaster, index.createUsers_submit);

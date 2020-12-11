@@ -3,6 +3,11 @@ var router = express.Router();
 
 var index = require('../controllers/Student');
 
-router.get('/', index.Student);
+//middleware
+var { isLoggedIn,hasAuthStudent } = require('../middleware/hasAuth');
+
+
+router.get('/',isLoggedIn,hasAuthStudent, index.student);
+
 
 module.exports = router;

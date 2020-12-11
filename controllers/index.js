@@ -9,24 +9,21 @@ const generateHash = function (password) {
 };
 
 //index page
-
 exports.index_get = function (req, res, next) {
-    res.render('index', { title: 'GONO UNIVERSITY',user:req.user });
+    res.render('index', { title: 'GONO UNIVERSITY' });
 };
 
-
+//DashBoard
+exports.dashBoard = function (req, res, next) {
+    res.render('dashboard', { user:req.user });
+};
 
 //webmaster index page
-
 exports.webmaster = function (req, res, next) {
-    res.render('webmaster');
+    res.render('webmaster',{user:req.user});
 };
 
-
-
-
 //create users page
-
 exports.createUsers = function (req, res, next) {
     
     model.dept_db.findAll().then(depts => 
@@ -34,8 +31,6 @@ exports.createUsers = function (req, res, next) {
         res.render('createUsers', { roles: roles,depts:depts });
      })
      );
-     
-    
 };
 
 exports.createUsers_submit = function (req, res, next) {
@@ -50,7 +45,6 @@ exports.createUsers_submit = function (req, res, next) {
     });
 };
 
-
 //show Users
 exports.showUsers= function (req, res, next) {
     return model.user_db.findAll().then(users => {
@@ -59,7 +53,6 @@ exports.showUsers= function (req, res, next) {
 };
 
 //Delete Users
-
 exports.DeleteUsers= function (req, res, next) {
     return model.user_db.destroy({
         where: {
@@ -70,10 +63,7 @@ exports.DeleteUsers= function (req, res, next) {
     });
 };
 
-
-
 //create dept page
-
 exports.createDept= function (req, res, next) {
     res.render('createDept');
 };
@@ -88,16 +78,13 @@ exports.Dept_submit= function (req, res, next) {
 };
 
 //show dept
-
 exports.showDept= function (req, res, next) {
     return model.dept_db.findAll().then(depts => {
         res.render('showDept', { depts: depts });
     });
 };
 
-
 //Delete depts
-
 exports.DeleteDept= function (req, res, next) {
     return model.dept_db.destroy({
         where: {
@@ -108,9 +95,7 @@ exports.DeleteDept= function (req, res, next) {
     });
 };
 
-
 //Create Roles
-
 exports.createRole= function (req, res, next) {
     res.render('createRole');
 };
@@ -123,11 +108,7 @@ exports.Role_submit= function (req, res, next) {
     });
 };
 
-
-
-
 //show Roles
-
 exports.showRole= function (req, res, next) {
     return model.role_db.findAll().then(roles => {
         res.render('showRole', { roles: roles });
@@ -135,7 +116,6 @@ exports.showRole= function (req, res, next) {
 };
 
 //Delete Roles
-
 exports.DeleteRole= function (req, res, next) {
     return model.role_db.destroy({
         where: {
@@ -146,21 +126,17 @@ exports.DeleteRole= function (req, res, next) {
     });
 };
 
-
-
 //login page
-
 exports.login = function (req, res, next) {
     res.render('login.pug');
 };
 exports.login_submit = function (req, res, next) {
     passport.authenticate('local', {
-        successRedirect: "/webmaster",
+        successRedirect: "/DashBoard",
         failureRedirect: "/login",
         failureFlash: true
     })(req, res, next);
 };
-
 
 //logout
 exports.logout = function (req, res, next) {
