@@ -1,0 +1,235 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header.hide1
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+
+    #buttons
+
+      if works
+        h2 Select for Review
+        br
+        for work in works
+          a(href='/Teacher/reviewResult70/' + work.session_id +'/'+work.semester+'/'+work.sub_id+'/') 
+            button #{work.session_id} #{work.semester} semester #{work.sub_id}
+            br
+          br
+
+    #results
+
+
+      if results
+        br
+        .hide.hide1
+          button(onclick='showTheory()') Theory Result
+          |
+          |
+          button(onclick='showLab()') Lab Result
+          |
+          |
+          button(onclick='showViva()') Viva Result
+          |
+          |
+          a(href='')
+            button Reset
+          br
+          br
+        .pTable
+          .mid.thirty 
+            img(src='/image/front-logo.png') 
+            h2 Gono Bishwabidyalay
+            h3 Examiners Comprehensive Marks Sheet 
+            h4
+              each i,n in results
+                if(0===n)
+                  if(i.semester)==1
+                    p.
+                      #{i.semester}st semester Final Examination - #{i.session_id}
+                  if(i.semester)==2
+                    p.
+                      #{i.semester}nd semester Final Examination - #{i.session_id}
+                  if(i.semester)==3
+                    p.
+                      #{i.semester}rd semester Final Examination - #{i.session_id}
+                  if(i.semester)>=4
+                    p.
+                      #{i.semester}th semester Final Examination - #{i.session_id}
+                else
+                -continue
+            br
+
+            h4.mh
+              each i,n in results
+                if(0===n)
+                  p Subject: 
+                  p Subject Code:  #{i.sub_id}
+                  p Total Mark: 
+                  p Department: 
+                  p Group:
+          .left 
+            table
+              tr 
+                th Numerical Grade
+                th Letter Grade
+                th Grade Point
+
+              tr 
+                th 80% and above 
+                th A+
+                th 4.00
+              tr 
+                th &emsp;75% to less than 80%&emsp;
+                th A
+                th 3.75
+              tr 
+                th 70% to less than 75%
+                th A-
+                th 3.50
+              tr 
+                th 65% to less than 70%
+                th B+
+                th 3.25
+              tr 
+                th 60% to less than 65%
+                th B
+                th 3.00
+              tr 
+                th 55% to less than 60%
+                th B-
+                th 2.75
+              tr 
+                th 50% to less than 55%
+                th C+
+                th 2.50
+              tr 
+                th 45% to less than 50%
+                th C
+                th 2.25
+              tr 
+                th 40% to less than 45%
+                th D
+                th 2.00
+              tr 
+                th Less than 40%
+                th F
+                th 0.00
+
+
+
+        br
+        h2.hide1 Review Results
+        table.review
+          tr
+            th  Exam Roll
+            th.hide1 Subject
+            th.theory  Q1
+            th.theory  Q2
+            th.theory  Q3
+            th.theory  Q4
+            th.theory  Q5
+            th.theory  Q6
+            th.theory  Q7
+            th.theory  Q8
+            th.theory  Q9
+            th.theory  Q10
+            th.theory  Q11
+            th.theory  Q12
+            th.theory  Q13
+            th.theory  Q14
+            th.theory  Q15
+            th.lab  Lab 
+            th.viva  Viva 
+            th.viva  Practical 
+            th.viva  Clinical
+            th  Marks
+            th.hide1  Exam Category
+            th.hide1  Result
+            th.hide1  Edit
+          each result in results
+            tr(id=result.result_id)
+              th #{result.student_db.exam_roll}
+              th.hide1=result.sub_id
+              th.theory= result.q1
+              th.theory #{result.q2}
+              th.theory #{result.q3}
+              th.theory #{result.q4}
+              th.theory #{result.q5}
+              th.theory #{result.q6}
+              th.theory #{result.q7}
+              th.theory #{result.q8}
+              th.theory #{result.q9}
+              th.theory #{result.q10}
+              th.theory #{result.q11}
+              th.theory #{result.q12}
+              th.theory #{result.q13}
+              th.theory #{result.q14}
+              th.theory #{result.q15}
+              th.lab #{result.lab}
+              th.viva #{result.viva}
+              th.viva #{result.practical}
+              th.viva #{result.clinical}
+              th #{result.q1*1+result.q2*1+result.q3*1+result.q4*1+result.q5*1+result.q6*1+result.q7*1+result.q8*1+result.q9*1+result.q10*1+result.q11*1+result.q12*1+result.q13*1+result.q14*1+result.q15*1+result.lab*1+result.viva*1+result.practical*1+result.clinical*1}
+              th.hide1 #{result.exam_type}
+              th.hide1 #{result.result}
+              th.hide1
+                a(href="edit/"+result.result_id)
+                  button Edit
+        br
+        br
+        br
+        .Signature
+          p.
+            Signature of the Examiner
+          each result,n in results
+            if(0===n)
+              p #{result.teacher_name}
+
+          p Date: #{moment().format('DD/MM/YYYY')}
+        br
+        br
+        br
+        button(id="btn2",onclick='p()') Print
+        br
+        br
+        br
+
+
+
+
+  script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+  script(src="/js/ResultDelete70.js")
+  script.
+    function p(){
+      var btn = document.getElementById('btn2');
+
+      btn.addEventListener("click", function() {
+      this.disabled = true;
+      btn.remove();
+
+      window.print();
+        });
+        }
+        function showTheory(){
+
+        $(".lab").hide();
+        $(".viva").hide();
+
+      };
+      function showLab(){
+
+        $(".theory").hide();
+        $(".viva").hide();
+
+      };
+      function showViva(){
+
+        $(".lab").hide();
+        $(".theory").hide();
+
+      }

@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    h2 Create Subject
+
+    form.user(action="/Admin/createSubject",method="POST")
+      br
+      h3 Subject ID 
+      br
+      input(name="sub_id",type="text",placeholder="sub_id")
+      br
+      br
+      h3 Subject Name 
+      br
+      input(name="sub_name",type="text",placeholder="sub_name")
+      br
+      br
+      h3 Subject CODE 
+      br
+      input(name="sub_code",type="text",placeholder="sub_code")
+      br
+      br
+      h3 Subject Credit 
+
+      input(name="credit",type="number")
+      br
+      br
+      h3 Total Marks 
+
+      input(name="total_marks",type="number")    
+      br
+      br
+      h3 Semester 
+        br
+        select(name="semester")
+          for role in [1,2,3,4,5,6,7,8]
+            option #{role}
+            br 
+      br
+      button(type="submit") Submit
+      br 
+      br

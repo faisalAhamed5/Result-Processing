@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar(user)
+    br
+    h2 Assign Subject
+    br
+    br
+    form.user(action="/Admin/assignSubject",method="POST",autocomplete="off")
+      datalist(id="subject_list")
+        for subject in subjects
+          option(value=subject.sub_id) 
+            p #{subject.sub_name} #{subject.semester} Semester
+      h3 Subject 
+      br
+      input(name="sub_id",type="text",list="subject_list",placeholder="Type Subject name")
+
+      br
+      br
+      h3 Teacher
+      select(name="email")
+        for teacher in teachers
+          option(value=teacher.email) 
+            if(teacher.role_id=="External") 
+              p  #{teacher.username}(External)
+            else 
+              p #{teacher.username}
+      br
+      br
+      h3 Session
+      datalist(id="session_list")
+        for session in sessions
+          option(value=session.session_id)  
+            p #{session.session_id}
+      h3 Session
+      br
+      input(name="session_id",type="text",list="session_list",placeholder="Type Session")
+
+      br
+      br
+
+      h3 Semester 
+        br
+        select(name="semester")
+          for role in [1,2,3,4,5,6,7,8]
+            option #{role}
+            br 
+      br
+      button(type="submit") Submit
+
+

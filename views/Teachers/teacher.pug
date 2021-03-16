@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    canvas#particles-js
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    .body
+      br
+      br
+      a(href='/Teacher/uploadResult30') 
+        button Upload 30% Result
+      br
+      br
+      a(href='/Teacher/uploadResult70') 
+        button Upload 70% Result
+      br
+      br
+      a(href='/Teacher/reviewResult30')
+        button Review & Submit 30% Result
+      br
+      br
+      a(href='/Teacher/reviewResult70')
+        button Review 70% Result
+      br
+      br
+      a(href='/Teacher/uploadSupplyOrImprove')
+        button Upload Suppli or Improvement Result
+      br
+      br
+      if works
+        a(href='/Teacher/chairman')
+          button Chairman
+
+
+script(src='/js/particle.js') 

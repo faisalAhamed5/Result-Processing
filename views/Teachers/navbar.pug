@@ -1,0 +1,17 @@
+mixin navbar()
+  nav.navbar
+
+    ul.nav-ul
+      if user.role_id
+        li
+          a(href='/'+user.role_id)
+            button #{user.role_id}
+      li 
+        a(href='/contacts')
+          button contacts
+      li 
+        a(href='/about')
+          button about
+      li 
+        a(href='/logout')
+          button Logout

@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h2 Create Session
+    br
+    form.user(action="/createSession",method="POST")
+      h3 Session ID 
+      br
+      input(name="session_id",type="text",placeholder="session_id")
+      br
+      br
+      h3 Month
+      br
+      select(name="month")
+        option(value="April") April
+        option(value="October") October
+      br
+      br
+      h3 Year
+      br
+      input(name="year",type="number")
+      br
+      br
+      button(type="submit") Submit
+      br 
+      br

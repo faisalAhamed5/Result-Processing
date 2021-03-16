@@ -1,0 +1,87 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    br
+    br
+    #buttons
+      if works
+        h2 Select for upload
+        br
+        br
+        for work in works
+          a(href='/Teacher/uploadResult30/' + work.session_id +'/'+work.semester+'/'+work.sub_id+'/')
+            button #{work.session_id} #{work.semester} semester #{work.sub_id}
+            br
+            br
+            |
+            |
+    #students
+
+      if students
+        h2 Upload Result
+        br
+        br
+        table
+          tr
+            th  Exam Roll
+            th  Student ID
+            th.theory  T1
+            th.theory  T2
+            th.theory  M1
+            th.theory  Attendance
+            th  Upload
+
+          for student in students
+            tr(class=student.id) 
+              form(id=student.id,action="json/",method="POST",autocomplete="off")
+                td #{student.exam_roll}
+                td #{student.s_id}
+                td.hide
+                  input(name="roll",size="4",type="text",value=student.exam_roll)
+                td.hide
+                  input.sid(name="sid",type="text",size="20",value=student.s_id)
+                td.theory
+                  input(name="t1",value=0,type="text",size="1")
+                td.theory
+                  input(name="t2",value=0,type="text",size="1")
+                td.theory
+                  input(name="m1",value=0,type="text",size="1")
+                td.theory
+                  input(name="attendance",value=0,type="text",size="9")
+
+                td 
+                  button(type="submit",value="submit",onclick=`submitResult('${student.id}')`) Submit
+            tr
+            tr      
+
+
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script(src="/js/submitResult30.js")
+    script.
+      function showTheory(){
+
+        $(".lab").hide();
+        $(".viva").hide();
+
+      };
+      function showLab(){
+
+        $(".theory").hide();
+        $(".viva").hide();
+
+      };
+      function showViva(){
+
+        $(".lab").hide();
+        $(".theory").hide();
+
+      }
+

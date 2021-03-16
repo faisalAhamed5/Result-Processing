@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h2 Created Departments
+    br
+    a(href='/createDept')
+      button Create more..
+    br
+    br  
+    table.assign
+      tr
+        th(scope="col") Dept ID
+        th(scope="col") Dept Name
+        th(scope="col") Degree
+      for dept in depts
+        tr
+          th(scope="col") #{dept.dept_id}
+          th(scope="col") #{dept.dept_name}
+          th(scope="col") #{dept.degree}
+          th(scope="col")
+            form(action="/showDept/"+dept.dept_id+"/delete",method="POST")
+              button(type="submit") Delete
+    br
+    br
+    br

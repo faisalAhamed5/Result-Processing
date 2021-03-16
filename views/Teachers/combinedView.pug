@@ -1,0 +1,84 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    br
+
+    h3 Internal & External Marks
+    br
+
+    h3
+      table.combineView
+        tr
+
+          th  Exam Roll
+          th  Subject
+          th  Session
+          td  Q1
+          td  Q2
+          td  Q3
+          td  Q4
+          td  Q5
+          td  Q6
+          td  Q7
+          td  Q8
+          td  Q9
+          td  Q10
+          td  Q11
+          td  Q12
+          td  Q13
+          td  Q14
+          td  Q15
+          td   T1
+          td  T2
+          td M1
+          td Lab
+          td Viva
+          td Attend.
+          th Exam Category
+          th Result Type
+          td Marks
+          th Result
+
+
+        for work in internalResults
+          tr
+
+            th= work.exam_roll
+            th= work.sub_id
+            th= work.session_id
+            td= work.q1
+            td= work.q2
+            td= work.q3
+            td= work.q4
+            td= work.q5
+            td= work.q6
+            td= work.q7
+            td= work.q8
+            td= work.q9
+            td= work.q10
+            td= work.q11 
+            td= work.q12 
+            td= work.q13 
+            td= work.q14 
+            td= work.q15  
+            td= work.t1
+            td= work.t2
+            td= work.m1
+            td= work.lab
+            td= work.viva 
+            td= work.attendance
+            th= work.exam_type
+            th=  work.result_type
+            td= work.dataValues.marks
+            th= work.result
+
+
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+

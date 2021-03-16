@@ -8,13 +8,7 @@ exports.isLoggedIn = function (req, res, next) {
         next(createError(404, "Page does not exist.haha"));
 };
 
-exports.hasAuthWebmaster = function (req, res, next) {
-    if (req.user && req.user.role_id == "WebMaster") {
-         next();
-    }
-    else
-       next(createError(404, "NOT Allowed"));
-};
+
 
 exports.hasAuthTeacher = function (req, res, next) {
     if (req.user && req.user.role_id == "Teacher") {
@@ -32,8 +26,8 @@ exports.hasAuthAdmin = function (req, res, next) {
        next(createError(404, "NOT Allowed"));
 };
 
-exports.hasAuthResultController = function (req, res, next) {
-    if (req.user && req.user.role_id == "ResultController") {
+exports.hasAuthController = function (req, res, next) {
+    if (req.user && req.user.role_id == "Controller") {
          next();
     }
     else
@@ -42,6 +36,13 @@ exports.hasAuthResultController = function (req, res, next) {
 
 exports.hasAuthStudent = function (req, res, next) {
     if (req.user && req.user.role_id == "Student") {
+         next();
+    }
+    else
+       next(createError(404, "NOT Allowed"));
+};
+exports.hasAuthExternal = function (req, res, next) {
+    if (req.user && req.user.role_id == "External") {
          next();
     }
     else

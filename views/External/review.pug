@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    #results
+
+      if subjects
+        h2 Review Results
+        table
+          tr 
+            th ID
+            each a in subjects
+              each b in a.results_dbs
+                th #{b.dataValues.s_id}
+              - break
+          each i in subjects
+            tr
+              th #{i.sub_id}
+              each j in i.results_dbs
+                if (j.dataValues.marks*100/i.total_marks)>=80
+                  th A+
+                else 
+                  if (j.dataValues.marks*100/i.total_marks)>=75
+                    th A
+                  else
+                    if (j.dataValues.marks*100/i.total_marks)>=70
+                      th A-
+                    else
+                      if (j.dataValues.marks*100/i.total_marks)>=65
+                        th B+
+                      else
+                        if (j.dataValues.marks*100/i.total_marks)>=60
+                          th B
+                        else
+                          if (j.dataValues.marks*100/i.total_marks)>=55
+                            th B-
+                          else
+                            if (j.dataValues.marks*100/i.total_marks)>=50
+                              th C+
+                            else
+                              if (j.dataValues.marks*100/i.total_marks)>=45
+                                th C
+                              else
+                                if (j.dataValues.marks*100/i.total_marks)>=40
+                                  th C
+                                else
+                                  th F
+    #resSubmit
+      form(action="json/",method="POST")
+
+        button(type="submit",value="submit",onclick=`submitResult()`) Submit to Result Controller
+
+
+  script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+  script(src="/js/work.js")
+
+
+
+
+

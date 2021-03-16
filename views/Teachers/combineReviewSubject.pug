@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    if works
+    h2 Review for final result
+    br
+    for work in works
+      a(href=''+work.sub_id+'/')
+        button #{work.sub_id}
+      br
+      br
+

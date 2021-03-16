@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    br
+    h2 Create Chairman
+    br
+    form.user(action="/Admin/createChairman",method="POST")
+      h3 Select Session
+      select(name="session_id")
+        for session in sessions
+          option #{session.session_id}
+      br 
+      br
+      h3 Select Teacher
+      select(name="email")
+        for teacher in teachers
+          option(value=teacher.email) #{teacher.username}
+      br 
+      br
+      h3 Semester 
+        br
+        select(name="semester")
+          for role in [1,2,3,4,5,6,7,8]
+            option #{role}
+            br 
+      br
+      button(type="submit") Submit
+      br 
+      br

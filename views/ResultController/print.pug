@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    br
+    h2 Select for Print
+    br
+    form.user(action='/print/Result/',id="print",autocomplete='off',method="POST")
+      h2 Select Department:
+      |
+      |
+      |
+      Select(name='dept')
+        for i in depts
+          option #{i.dept_id}
+      br
+      br
+      h2 Select Session:
+      datalist(id="session_list")
+        for session in sessions
+          option(value=session.session_id)  
+            p #{session.session_id}
+
+      input(name="session",type="text",list="session_list",placeholder="Type Session")
+      br
+      br
+      h2 Semester:
+      br
+      h3
+        input(type="radio",class="result",name="semester", value="1")
+        label 1 
+        input(type="radio",class="result",name="semester", value="2")
+        label 2 
+        input(type="radio",class="result",name="semester", value="3")
+        label 3 
+        input(type="radio",class="result",name="semester", value="4")
+        label 4 
+        input(type="radio",class="result",name="semester", value="5")
+        label 5 
+        input(type="radio",class="result",name="semester", value="6")
+        label 6 
+        input(type="radio",class="result",name="semester", value="7")
+        label 7 
+        input(type="radio",class="result",name="semester", value="8")
+        label 8
+
+
+      br
+      br
+
+      button(type="submit",value="submit") Submit
+
+
+
+
+
+
+

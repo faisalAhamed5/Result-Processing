@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    canvas#particles-js
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    .body
+      br
+      a(href='/Student/gpa') 
+        button See GPA
+      br
+      br
+      a(href='/Student/cgpa')
+        button See CGPA
+    script(src='/js/particle.js') 

@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h2 Create Dept
+    br
+    form.user(action="/createDept",method="POST")
+      h3 Department ID
+      input(name="dept_id",type="text",placeholder="Enter deptID")
+      br
+      br
+      h3 Department Name
+      input(name="dept_name",type="text",placeholder="Enter Dept name")
+      br
+      br
+      h3 Degree
+      input(name="degree",type="text",placeholder="Degree")
+      br
+      br
+      button(type="submit") Submit
+      br 
+      br

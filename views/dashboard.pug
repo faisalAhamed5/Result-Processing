@@ -1,19 +1,13 @@
-extends layout
-
-block content
-  p All Users.
-  br
-  br
-  a(href='/Teacher') Teacher
-  br
-  br
-  a(href='/ResultController') ResultController
-  br
-  br
-  a(href='/Student') Student
-  br
-  br
-  a(href='/Admin') Admin
-  br
-  br
-  a(href='/webmaster') Webmaster
+doctype html
+html(lang='en')
+  include common/indexHead.pug
+  +head()
+  body
+    canvas#particles-js
+    header
+      h1 Gono University
+        p Result Hub 
+      include common/navbar.pug
+      +navbar(user)
+    .main
+script(src='/js/particle.js') 

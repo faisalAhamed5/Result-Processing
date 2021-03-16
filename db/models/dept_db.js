@@ -11,12 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      dept_db.hasMany(models.user_db, { foreignKey: "dept_id", onDelete: 'RESTRICT', onUpdate: 'CASCADE' });
+      dept_db.hasMany(models.subject_db, { foreignKey: "dept_id", onDelete: 'RESTRICT', onUpdate: 'CASCADE' });
+      dept_db.hasMany(models.student_db, { foreignKey: "dept_id", onDelete: 'RESTRICT', onUpdate: 'CASCADE' });
+      dept_db.hasMany(models.sub_assign_db,{foreignKey:"dept_id",onDelete:'RESTRICT', onUpdate: 'CASCADE' });
     }
   };
   dept_db.init({
-    dept_id: DataTypes.STRING,
-    dept_name: DataTypes.STRING,
-    degree: DataTypes.STRING
+    dept_id: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        primaryKey: true
+      },
+      dept_name: {
+        allowNull: false,
+        type: DataTypes.STRING
+      },
+      degree: {
+        allowNull: false,
+        type: DataTypes.STRING
+      },
   }, {
     sequelize,
     modelName: 'dept_db',

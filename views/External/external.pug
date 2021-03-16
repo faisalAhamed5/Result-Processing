@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h1 Hello Teacher
+    br
+    br
+    a(href='/External/uploadResult')
+      button Upload Result
+    br
+    br
+    a(href='/External/reviewResult70')
+      button Review Result
+    br
+    br
+    a(href='/External/uploadSupplyOrImprove')
+      button Upload Supply or Improvement Result
+
+    br
+    br

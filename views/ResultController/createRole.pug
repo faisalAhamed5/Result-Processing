@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h2 Create Role
+    br
+    form.user(action="/createRole",method="POST")
+      h3 Role ID
+      input(name="role_id",type="text",placeholder="Enter Role ID")
+      br
+      br
+      h3 Role Name
+      input(name="role",type="text",placeholder="Enter Role name")
+      br
+      br
+      button(type="submit") Submit
+      br 
+      br

@@ -1,15 +1,31 @@
-extends layout
+doctype html
+html(lang='en')
+  include common/indexHead.pug
+  +head(title)
+  body 
+    canvas#particles-js
+    .container
+      form(action="/login",method="POST")
+        label Email
+        br
+        input(placeholder='Enter your email', required=true, name='email', type='email', value='',size=20)
+        br
+        br
+        br
+        br
+        label Password
+        br
+        input(placeholder='Password',required=true, name='password', type='password', value='',size=20)
+        br
+        br
+        br
+        .submit_btn
+          button(type='submit') Login
+        br
 
-block content
-  h2 Login Page
-  form(action="/login",method="POST")
-    input(placeholder='Enter your email', required=true, name='email', type='email', value='')
-    br
-    br
-    input(placeholder='Enter your current password',required=true, name='password', type='password', value='')
-    br
-    br
-    button(type="submit") Submit
-    br 
-    br
+      a(href='/')
+        button  Home Page
 
+
+
+    script(src='/js/particle.js')

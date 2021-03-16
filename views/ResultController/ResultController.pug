@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    br
+    a(href='/createAdmins')
+      button Create Admins
+    br 
+    br
+    a(href='/showAdmins')
+      button  Show created Users
+    br 
+    br
+    a(href='/createDept')
+      button  Create Dept
+    br 
+    br
+    a(href='/showDept')
+      button  Show created Dept
+    br 
+    br
+    a(href='/createRole')
+      button  Create Role
+    br 
+    br
+    a(href='/showRole')
+      button  Show created Roles
+    br 
+    br
+    a(href='/createSession')
+      button  Create Session
+    br
+    br
+    a(href='/createdSessions')
+      button  Created Sessions
+    br
+    br
+    a(href='/printMarks')
+      button  View 30% and 100% Result
+    br
+    br
+    a(href='/selectForPublish')
+      button  Select for Publish
+    br
+    br
+    a(href='/print')
+      button  Print Session Result
+    br
+    br
+    a(href='/printSupplyImprove')
+      button  Print Suppli & Improvement Result
+    br
+    br
+    a(href='/resultArchive')
+      button  Results Archive
+    br
+    br
+
+

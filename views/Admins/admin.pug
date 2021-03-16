@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar(user)
+    br
+    a(href='/Admin/createUsers')
+      button Create Users
+    br
+    br
+    a(href='/Admin/showUsers')
+      button Show Users
+    br
+    br
+    a(href='/Admin/createSubject')
+      button Create Subject
+    br
+    br
+    a(href='/Admin/Subjects')
+      button Subjects
+    br
+    br
+    a(href='/Admin/assignSubject')
+      button Assign Subject
+    br
+    br
+    a(href='/Admin/assignedSubjects')
+      button Assigned Subjects
+    br
+    br
+    a(href='/Admin/studentData')
+      button Student Data Input
+    br
+    br
+    a(href='/Admin/showStudentData')
+      button Student Data
+    br
+    br
+    a(href='/Admin/semesterUpgrade')
+      button Semester Upgrade
+    br
+    br
+    a(href='/Admin/createChairman')
+      button Create Chairman
+    br
+    br
+    a(href='/Admin/showChairmans')
+      button Chairmans
+    br
+    br

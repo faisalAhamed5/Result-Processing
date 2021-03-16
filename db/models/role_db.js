@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      role_db.hasMany(models.user_db,{foreignKey:"role_id",onDelete:'RESTRICT',onUpdate:'CASCADE'});
     }
   };
   role_db.init({
-    role_id: DataTypes.STRING,
-    role: DataTypes.STRING
+    role_id: {
+        allowNull: false,
+        primaryKey: true,
+        type: DataTypes.STRING
+      },
+      role: {
+        allowNull: false,
+        type: DataTypes.STRING
+      },
   }, {
     sequelize,
     modelName: 'role_db',

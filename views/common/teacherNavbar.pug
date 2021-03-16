@@ -1,0 +1,31 @@
+mixin navbar()
+  nav.navbar
+
+    ul.nav-ul
+      if user
+        li.username Hello! #{user.username}
+
+      if(user.role_id=="Teacher")
+        li
+          a(href='/'+user.role_id)
+            button Home 
+      if(user.role_id=="Controller")
+        li
+          a(href='/'+user.role_id)
+            button Home
+      if(user.role_id=="External")
+        li
+          a(href='/'+user.role_id)
+            button Home
+
+      if(user.role_id=="Admin")
+        li
+          a(href='/'+user.role_id)
+            button Home
+      if(user.role_id=="Student")
+        li
+          a(href='/'+user.role_id)
+            button Home
+      li 
+        a(href='/logout')
+          button Logout

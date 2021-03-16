@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    br
+    h2 Create Student
+    br
+    form.user(action="/Admin/studentData",method="POST",autocomplete="off")
+      label Student name 
+      br
+      input(name="s_name",type="text",placeholder="Student name")
+      br
+      br
+      label Batch Name 
+      br
+      input(name="batch",type="number")
+      br
+      br
+      label Exam Roll
+      br
+      input(name="exam_roll",type="number")
+      br
+      br
+      label Reg. no 
+      br
+      input(name="reg_no",type="text")
+      br
+      br
+      label Degree 
+        |
+        |
+        |
+        select(name="degree")
+          option Hons
+      br
+      br
+      label Semester 
+      br
+      input(name="semester",type="number")
+      br
+      br
+      label Student ID 
+      br
+      input(name="s_id",type="text")
+      br
+      br
+      label Email 
+      br
+      datalist(id="email_list")
+        for student in students
+          option #{student.email}
+      input(name="email",type="text",list="email_list")
+      br
+      br
+      button(type="submit") Submit
+      br 
+      br
+      br
+      br
+      br
+      br

@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    if works
+    .withex
+      h2 Combine result
+      h3 Subject with External
+      br
+      for work in works
+        a(href=''+work.sub_id+'/withEx')
+          button #{work.sub_id}
+        |
+        |
+        |
+    .withoutex
+      br
+      br
+      h2 Combine result
+      h3 Subject without External
+      br
+      for work in works
+        a(href=''+work.sub_id+'/withoutEx')
+          button #{work.sub_id}
+          |
+          |
+          |
+        
+

@@ -5,28 +5,43 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
+        unique: true,
         type: Sequelize.INTEGER
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate:
+        {
+          len: [3, 25]
+        }
       },
       email: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
+        validate:
+        {
+          notNull: true,
+          isEmail:true
+        }
       },
       pass: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       role_id: {
         allowNull: false,
         type: Sequelize.STRING
       },
       dept_id: {
-        
+        allowNull: false,
         type: Sequelize.STRING
+      },
+      active: {
+      allowNull: false,
+      type:Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -36,7 +51,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+      
     });
+    
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('user_dbs');

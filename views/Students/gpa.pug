@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    canvas#particles-js
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    .body
+      h1 Select Semester
+      for i in works
+        for j in semester
+          a(href="/Student/gpa/"+j+'/'+i.s_id)
+            button #{j} Semester
+            |
+            |
+            |
+    script(src='/js/particle.js') 

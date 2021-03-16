@@ -1,0 +1,466 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #18191A;
+    color: white;
+}
+
+canvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+header {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #25ABEE;
+    padding: 10px 1%;
+    color: white;
+    position: relative;
+}
+
+header>h1>p {
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.1em;
+}
+
+header>h1 {
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.3em;
+}
+
+.container {
+    width: 320px;
+    height: 400px;
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(44, 43, 43, 0.5);
+    padding-top: 70px;
+    border-radius: 30px;
+}
+
+.body {
+    position: relative;
+    text-align: center;
+}
+
+.container label {
+    color: aliceblue;
+}
+
+.form_input {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.container input {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    outline: none;
+    text-align: center;
+}
+
+.container input:hover {
+    border-bottom: 2px solid rgb(252, 28, 28);
+    transition: ease-in 0.2s;
+}
+
+.submit_btn {
+    padding-top: 10px;
+}
+
+a :hover {
+    cursor: pointer;
+    background-color: #f8f8ff;
+    color: black;
+    font-weight: bolder;
+    transition: ease-in 0.3s;
+}
+
+button :hover {
+    cursor: pointer;
+    background-color: #f8f8ff;
+    color: black;
+    font-weight: bolder;
+    transition: ease-in 0.3s;
+}
+
+.navbar a :hover {
+    cursor: pointer;
+    background-color: #f8f8ff;
+    color: black;
+    font-weight: bolder;
+    transition: ease-in 0.3s;
+}
+
+label a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+button {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1A73E8;
+    font-size: .8em;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    outline: none;
+    padding: 5px 5px;
+    color: rgb(255, 255, 255);
+    font-size: 1.1em
+}
+
+.navbar button {
+    border-radius: 5px;
+    height: 35px;
+    width: 80px;
+    border: none;
+    color: azure;
+    background-color: #1A73E8;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 2px;
+    font-size: .8em;
+}
+
+.nav-ul li.username {
+    list-style: none;
+    display: inline-block;
+    padding: 2px;
+    font-size: 1.4em;
+}
+
+.navbar {
+    display: inline;
+    padding-top: 5px;
+}
+
+.table {
+    text-align: center;
+}
+
+.table th.sess input {
+    width: 8em;
+}
+
+table {
+    margin: auto;
+    font-size: .8em;
+}
+
+input[type="text"],
+[type="number"] {
+    width: 3em;
+    text-align: center;
+}
+
+input.sub[type="text"],
+[type="number"] {
+    width: 20em;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+input.roll[type="text"],
+[type="number"] {
+    width: 2em;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+input.sid[type="text"],
+[type="number"] {
+    width: 13em;
+    text-align: center;
+}
+
+button[type="submit"] {
+    background-color: #f8f8ff;
+    color: black;
+}
+
+button[type="submit"]:hover {
+    background-color: red;
+    color: #f8f8ff;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: ease-in 0.1s;
+}
+
+tr:nth-child(odd) {
+    background-color: #55595f;
+}
+
+input {
+    border: none;
+}
+
+table.review th {
+    width: 5em;
+    border: #18191A solid 1px;
+}
+
+table.combine td input[type='text'] {
+    width: 2em;
+}
+
+table.combine th input[type='text'] {
+    width: 6em;
+}
+
+table.combineView th {
+    width: 8em;
+}
+
+table.combineView td {
+    width: 2em;
+}
+
+form.user input[type="text"],
+[type="email"],
+[type="password"],
+[type="number"] {
+    width: 20em;
+    text-align: center;
+    font-size: 1.4em;
+    border-radius: 5px;
+    border: 0;
+}
+
+form.user select {
+    font-size: 1em;
+    width: 10em;
+}
+
+table.assign {
+    width: 60em;
+}
+
+table.upgrade {
+    width: 60em;
+}
+
+table.assign button:hover {
+    background-color: red;
+    color: #f8f8ff;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: ease-in 0.1s;
+}
+
+table.upgrade button:hover {
+    background-color: red;
+    color: #f8f8ff;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: ease-in 0.1s;
+}
+
+#tbl {
+    font-size: .9em;
+}
+
+#fail {
+    background-color: red;
+}
+
+#pass {
+    background-color: gold;
+    color: black;
+}
+
+#tbl2container table th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: .9em;
+}
+
+#tbl2container2 table th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: .9em;
+}
+
+#tbl2container table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#tbl2container2 table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+select.passfail {
+    -moz-appearance: none;
+    border: none;
+}
+
+tr.hidetr {
+    display: none;
+}
+
+#after {
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 5em;
+}
+
+@media print {
+    table th {
+        table-layout: fixed;
+        width: 7.5em;
+        color: black;
+    }
+    * {
+        color: black;
+    }
+    .pTable .left table {
+        font-size: .7em;
+        white-space: nowrap;
+        border-collapse: collapse;
+    }
+    .pTable .left th {
+        border: #18191A solid 1px;
+        border-collapse: collapse;
+    }
+    .pTable .right th {
+        border: #18191A solid 1px;
+        border-collapse: collapse;
+        white-space: nowrap;
+    }
+    table>tr>th:nth-of-type(1) {
+        white-space: nowrap;
+        text-align: left;
+    }
+    tr:nth-child(even) {
+        background-color: #3582e0;
+    }
+    .afterm li {
+        list-style: none;
+    }
+    .mid {
+        align-content: center;
+    }
+    h4.h {
+        text-align: left;
+    }
+    #tbl2container2 {
+        text-align: left;
+    }
+    .hide1 {
+        display: none;
+    }
+    #tbl2container.archive table th {
+        text-align: left;
+    }
+}
+
+.list ul {
+    text-align: left;
+}
+
+.pTable {
+    display: flex;
+    justify-content: space-between;
+}
+
+td.hide {
+    display: none;
+}
+
+th.hide {
+    display: none;
+}
+
+#tbl2container table th {
+    text-align: center;
+    font-size: 1em;
+}
+
+#tbl2container table>tr>th:nth-of-type(1) {
+    white-space: nowrap;
+    text-align: left;
+}
+
+#tbl2container2 table>tr>th:nth-of-type(1) {
+    white-space: nowrap;
+    text-align: left;
+}
+
+.Signature {
+    padding-left: 450px;
+}
+
+.mid img {
+    height: 50px;
+}
+
+.sig {
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 5em;
+}
+
+.sig .list {
+    text-align: left;
+}
+
+.mh {
+    text-align: left;
+}
+
+table.review {
+    border-collapse: collapse;
+}
+
+.mid.thirty {
+    padding-left: 50px;
+}
+
+button.longButton {
+    width: 10em;
+}

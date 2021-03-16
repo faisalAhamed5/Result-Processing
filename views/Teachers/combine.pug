@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+  if works
+  h2 Select Session
+  br
+  for work in works
+    a(href="/Teacher/chairman/combine/"+work.session_id+'/'+work.semester+'/') 
+      button #{work.session_id} #{work.semester} Semester
+    br
+    br
+  br
+

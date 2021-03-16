@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    h2 Create Users
+    br
+    br
+    form.user(action="/Admin/createUsers",method="POST")
+      h3 Username
+      input(name="name",type="text",placeholder="Enter username name")
+      br
+      br
+      h3 email
+      input(name="email",type="email",placeholder="Enter email address")
+      br
+      br
+      h3 Password
+      input(name="password",type="password",placeholder="Enter Password")
+      br
+      br
+      h3 Select Role:
+        |
+        |
+        |
+        select(name="role")
+          for role in roles
+            option #{role.role_id}
+      br
+      br
+      h3 Status
+        br
+        input(type="radio",name="active",checked="checked" value="true")
+        label Active
+        |
+        |
+        |
+        input(type="radio",name="active", value="false")
+        label Inactive 
+      br 
+      br
+      button(type="submit") Submit
+      br 
+      br

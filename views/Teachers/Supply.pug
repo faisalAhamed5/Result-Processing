@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+
+    if subjects
+      br
+      h2 Supply & Improvement Result
+      br
+      br 
+      form(action="/Teacher/uploadSupplyOrImprove/upload",method ="GET",autocomplete="false")
+        h3 Select Subject
+          |
+          |
+          |
+          datalist(id="subject_list")
+            for subject in subjects
+              option(value=subject.sub_id)  
+                p #{subject.sub_name}
+
+          input.sub(name="sub_id",type="text",list="subject_list",size='20')
+        br
+        h3 Exam Roll
+          |
+          |
+          |
+          input.roll(name="exam_roll",type="text",size="20")
+        br
+        button(type="submit",value="submit") Search
+

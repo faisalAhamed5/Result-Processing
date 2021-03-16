@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar(user)
+
+  if works
+  br
+  h2 Review as Chairman
+  br
+  for work in works
+    a(href="/Teacher/chairman/"+work.session_id+'/'+work.semester+'/')
+      button #{work.session_id} #{work.semester} Semester
+    br
+    br
+  br
+  for work in works
+    a(href="/Teacher/chairman/supplyImprove/"+work.session_id+'/'+work.semester+'/')
+      button #{work.session_id} #{work.semester} Semester Suppli & Improvement
+    br
+    br
+  br
+  br
+  h2 Review before Combining
+  br
+  a(href="/Teacher/chairman/combineReview")
+    button  Review
+  br
+  br
+  h2 Combine External and Internal Result
+  br
+  a(href="/Teacher/chairman/combine")
+    button  Combine
+  br
+  br
+  br
+  br
+  br
+  br

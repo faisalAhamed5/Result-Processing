@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  include ../common/teacherHead.pug
+  +head()
+  body
+
+    header
+      h1 Gono University
+        p Result Hub 
+      include ../common/teacherNavbar.pug
+      +navbar()
+    if depts
+      br
+      h2 Select Department
+      br
+      for i in depts
+        a(href="/printMarks/"+i.dept_id+'/')
+          button #{i.dept_id}
+        br
+        br
+    if sessions
+      br
+      h2 Select Session
+      br
+      for i in sessions
+        a(href=""+i.session_id+'/')
+          button #{i.session_id}
+        br
+        br
+    if semesters
+      br
+      h2 Select Semester
+      br
+      for i in semesters
+
+        a(href=""+i+'/')
+          button.longButton #{i}
+          br
+        br
+    if works
+      h2 Select Subject
+      br
+      for work in works
+        a(href=''+work.sub_id)
+          button #{work.sub_id}
+        |
+        |
+        |
+
+        
