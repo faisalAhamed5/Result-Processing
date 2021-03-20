@@ -6,9 +6,7 @@ module.exports = {
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": 5432,
-     "dialectOptions": {
-  "ssl": true
-}
+     
   },
   "test": {
     "username": "itrrsbnqkoflxg",
@@ -17,9 +15,7 @@ module.exports = {
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": 5432,
-     "dialectOptions": {
-  "ssl": true
-}
+     
   },
   "production": {
     "username": "itrrsbnqkoflxg",
@@ -28,8 +24,6 @@ module.exports = {
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": 5432,
-     "dialectOptions": {
-  "ssl": true
-}
+     
   }
 };
