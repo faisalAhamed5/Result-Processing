@@ -5,7 +5,7 @@ var index = require('../controllers/index');
 
 
 //middleware
-var { isLoggedIn,hasAuthController } = require('../middleware/hasAuth');
+var { isLoggedIn } = require('../middleware/hasAuth');
 
 /* GET home page. */
 router.get('/', index.index_get);
@@ -20,65 +20,65 @@ router.get('/logout', index.logout);
 router.post('/logout', index.logout);
 
 //Dashboard
-router.get('/DashBoard',isLoggedIn, index.dashBoard);
+router.get('/DashBoard', index.dashBoard);
 
-router.get('/Controller',hasAuthController,  index.controller);
+router.get('/Controller',  index.controller);
 
-router.get('/createAdmins',hasAuthController, index.createAdmins);
-router.post('/createAdmins',hasAuthController,  index.createAdmins_submit);
+router.get('/createAdmins', index.createAdmins);
+router.post('/createAdmins',  index.createAdmins_submit);
 
 
-router.get('/showAdmins',hasAuthController, index.showAdmins);
-router.post('/showAdmins/:user_id/delete_json',hasAuthController, index.DeleteAdmins_json);
+router.get('/showAdmins', index.showAdmins);
+router.post('/showAdmins/:user_id/delete_json', index.DeleteAdmins_json);
 
-router.get('/createDept',hasAuthController, index.createDept);
-router.post('/createDept',hasAuthController, index.Dept_submit);
+router.get('/createDept', index.createDept);
+router.post('/createDept', index.Dept_submit);
 
-router.get('/showDept',hasAuthController,  index.showDept);
-router.post('/showDept/:dept_id/delete',hasAuthController, index.DeleteDept);
+router.get('/showDept',  index.showDept);
+router.post('/showDept/:dept_id/delete', index.DeleteDept);
 
-router.get('/createRole',hasAuthController, index.createRole);
-router.post('/createRole',hasAuthController, index.Role_submit);
+router.get('/createRole', index.createRole);
+router.post('/createRole', index.Role_submit);
 
-router.get('/showRole',hasAuthController,  index.showRole);
-router.post('/showRole/:role_id/delete',hasAuthController, index.DeleteRole);
+router.get('/showRole',  index.showRole);
+router.post('/showRole/:role_id/delete', index.DeleteRole);
 
-router.get('/createSession',hasAuthController, index.createSession);
-router.post('/createSession',hasAuthController, index.createSession_submit);
-router.get('/createdSessions',hasAuthController, index.createdSessions);
-router.post('/createdSessions/:sessionId/delete_json',hasAuthController, index.DeleteSession_json);
+router.get('/createSession', index.createSession);
+router.post('/createSession', index.createSession_submit);
+router.get('/createdSessions', index.createdSessions);
+router.post('/createdSessions/:sessionId/delete_json', index.DeleteSession_json);
 
 //publish result
-router.get('/selectForPublish',hasAuthController, index.selectForPublish);
-router.get('/selectForPublish/:deptID',hasAuthController, index.selectForPublish_dept);
-router.get('/selectForPublish/:deptID/:sessionID',hasAuthController, index.selectForPublish_dept_session);
-router.get('/selectForPublish/:deptID/:sessionID/:semester',hasAuthController, index.selectForPublish_dept_session_semester);
-router.post('/selectForPublish/:deptID/:sessionID/:semester/:sID',hasAuthController, index.publish);
+router.get('/selectForPublish', index.selectForPublish);
+router.get('/selectForPublish/:deptID', index.selectForPublish_dept);
+router.get('/selectForPublish/:deptID/:sessionID', index.selectForPublish_dept_session);
+router.get('/selectForPublish/:deptID/:sessionID/:semester', index.selectForPublish_dept_session_semester);
+router.post('/selectForPublish/:deptID/:sessionID/:semester/:sID', index.publish);
 
 //print
-router.get('/print',hasAuthController, index.print);
-router.post('/print/Result/', hasAuthController, index.printResult);
+router.get('/print', index.print);
+router.post('/print/Result/',, index.printResult);
 
 //print marks
-router.get('/printMarks',hasAuthController, index.printMark);
-router.get('/printMarks/:deptID',hasAuthController, index.printMark_dept);
-router.get('/printMarks/:deptID/:sessionID',hasAuthController, index.printMark_dept_session);
-router.get('/printMarks/:deptID/:sessionID/:semester', hasAuthController, index.printMark_dept_session_semester);
-router.get('/printMarks/:deptID/:sessionID/:semester/:subID',hasAuthController, index.printMark_dept_session_semester_subject);
+router.get('/printMarks', index.printMark);
+router.get('/printMarks/:deptID', index.printMark_dept);
+router.get('/printMarks/:deptID/:sessionID', index.printMark_dept_session);
+router.get('/printMarks/:deptID/:sessionID/:semester',, index.printMark_dept_session_semester);
+router.get('/printMarks/:deptID/:sessionID/:semester/:subID', index.printMark_dept_session_semester_subject);
 
 
 //print supply improve
 
-router.get('/printSupplyImprove',hasAuthController, index.printSupply);
-router.post('/printSupplyImprove/Result',hasAuthController, index.printSupplyResult);
+router.get('/printSupplyImprove', index.printSupply);
+router.post('/printSupplyImprove/Result', index.printSupplyResult);
 
 
 
 //result archive
-router.get('/resultArchive',hasAuthController, index.resultArchive);
-router.get('/resultArchive/:deptID',hasAuthController, index.resultArchive_dept);
-router.get('/resultArchive/:deptID/:batchID',hasAuthController, index.resultArchive_dept_batch);
-router.get('/resultArchive/:deptID/:batchID/:semester',hasAuthController, index.resultArchive_dept_batch_semester);
+router.get('/resultArchive', index.resultArchive);
+router.get('/resultArchive/:deptID', index.resultArchive_dept);
+router.get('/resultArchive/:deptID/:batchID', index.resultArchive_dept_batch);
+router.get('/resultArchive/:deptID/:batchID/:semester', index.resultArchive_dept_batch_semester);
 
 
 
