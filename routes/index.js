@@ -57,13 +57,13 @@ router.post('/selectForPublish/:deptID/:sessionID/:semester/:sID', index.publish
 
 //print
 router.get('/print', index.print);
-router.post('/print/Result/',, index.printResult);
+router.post('/print/Result/', index.printResult);
 
 //print marks
 router.get('/printMarks', index.printMark);
 router.get('/printMarks/:deptID', index.printMark_dept);
 router.get('/printMarks/:deptID/:sessionID', index.printMark_dept_session);
-router.get('/printMarks/:deptID/:sessionID/:semester',, index.printMark_dept_session_semester);
+router.get('/printMarks/:deptID/:sessionID/:semester', index.printMark_dept_session_semester);
 router.get('/printMarks/:deptID/:sessionID/:semester/:subID', index.printMark_dept_session_semester_subject);
 
 
