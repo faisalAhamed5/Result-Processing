@@ -5,7 +5,8 @@ module.exports = {
     "database": "dat4u3471vmmnl",
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "port": 5432
+    "port": 5432,
+    "URI":process.env.DATABASE_URL,
   },
   "test": {
     "username": "itrrsbnqkoflxg",
@@ -13,7 +14,8 @@ module.exports = {
     "database": "dat4u3471vmmnl",
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "port": 5432
+    "port": 5432,
+     "URI":process.env.DATABASE_URL,
   },
   "production": {
     "username": "itrrsbnqkoflxg",
@@ -21,6 +23,7 @@ module.exports = {
     "database": "dat4u3471vmmnl",
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "port": 5432
+    "port": 5432,
+     "URI":process.env.DATABASE_URL,
   }
 };
