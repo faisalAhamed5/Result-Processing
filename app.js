@@ -44,7 +44,8 @@ app.use(session({
   name: SESS_NAME,
   resave: false,
   saveUninitialized: false,
-  secret:SESS_SECRET,
+  secret: SESS_SECRET,
+  store: new (require('connect-pg-simple')(session))(),
   cookie: {
     maxAge: SESS_lifetime,
     sameSite: true,
