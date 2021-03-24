@@ -30,8 +30,10 @@ app.locals.moment = require('moment');
 
 app.use(flash());
 //session
-
-app.use(session());
+const sess_id = "resultProcessing123";
+app.use(session({
+  secret:sess_id,
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
