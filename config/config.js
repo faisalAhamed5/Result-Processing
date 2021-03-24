@@ -1,4 +1,6 @@
-/*module.exports = {
+
+
+module.exports = {
   "development": {
     "username": "itrrsbnqkoflxg",
     "password": 'd29a5da44d8dca96ca7860a605bce06ac09464142de311d79c91aba7df91f064',
@@ -27,7 +29,10 @@
      
   }
 };
-*/
+
+
+
+/*
 module.exports = {
   "development": {
     "username": "test",
@@ -54,3 +59,4 @@ module.exports = {
     "port": 5432
   }
 };
+*/
