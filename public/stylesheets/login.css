@@ -120,7 +120,18 @@ label a {
   color: #fff;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-
+.navbar button{
+  height: 35px;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  outline: none;
+  color: azure;
+  background-color:#5A6074;
+  
+}
 button{
   height: 4em;
   border: none;
