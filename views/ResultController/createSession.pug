@@ -7,7 +7,8 @@ html(lang='en')
     header
       h1 Gono University
         p Result Hub 
-
+      include ../common/teacherNavbar.pug
+      +navbar()
     h2 Create Session
     br
     form.user(action="/createSession",method="POST")
