@@ -15,7 +15,7 @@ html(lang='en')
       br
       for i in depts
         a(href="/selectForPublish/"+i.dept_id+'/')
-          button #{i.dept_id}
+          button.indexpage #{i.dept_id}
           br
           br
           |
@@ -29,7 +29,7 @@ html(lang='en')
       for i in sessions
 
         a(href=""+i.session_id+'/')
-          button #{i.session_id}
+          button.indexpage #{i.session_id}
           br
           br
           |

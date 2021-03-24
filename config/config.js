@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
   "development": {
     "username": "itrrsbnqkoflxg",
     "password": 'd29a5da44d8dca96ca7860a605bce06ac09464142de311d79c91aba7df91f064',
@@ -25,5 +25,32 @@ module.exports = {
     "dialect": "postgres",
     "port": 5432,
      
+  }
+};
+*/
+module.exports = {
+  "development": {
+    "username": "test",
+    "password": '123',
+    "database": "results",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "test": {
+    "username": "test",
+    "password": '123',
+    "database": "results",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "production": {
+    "username": "test",
+    "password": '123',
+    "database": "results",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "port": 5432
   }
 };

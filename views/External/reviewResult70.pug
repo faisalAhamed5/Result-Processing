@@ -17,14 +17,14 @@ html(lang='en')
         br
         for work in works
           a(href='/External/reviewResult70/' + work.session_id +'/'+work.semester+'/'+work.sub_id+'/') 
-            button #{work.session_id} #{work.semester} semester #{work.sub_id}
+            button.indexpage #{work.session_id} #{work.semester} semester #{work.sub_id}
             br
           br
 
     #results
       if results
         .pTable
-          .mid   
+          .mid.thirty   
             img(src='/image/front-logo.png') 
             h2 Gono Bishwabidyalay
             h3 Examiners Comprehensive Marks Sheet 
@@ -50,10 +50,11 @@ html(lang='en')
             h4.mh
               each i,n in results
                 if(0===n)
-                  p Subject: ...................................
+                  p Subject: 
                   p Subject Code:  #{i.sub_id}
-                  p Total Mark: ..........
-                  p Department: ................................
+                  p Total Mark: 
+                  p Department: 
+                  p Group:
           .left 
             table
               tr 
@@ -66,7 +67,7 @@ html(lang='en')
                 th A+
                 th 4.00
               tr 
-                th 75% to less than 80%
+                th &emsp;75% to less than 80%&emsp;
                 th A
                 th 3.75
               tr 

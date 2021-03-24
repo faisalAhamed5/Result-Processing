@@ -8,23 +8,25 @@ html(lang='en')
       form(action="/login",method="POST")
         label Email
         br
-        input(placeholder='Enter your email', required=true, name='email', type='email', value='',size=20)
+        input(placeholder='Enter your email', required=true, name='email', type='email', value='',size=35)
         br
         br
         br
         br
         label Password
         br
-        input(placeholder='Password',required=true, name='password', type='password', value='',size=20)
+        input(placeholder='Password',required=true, name='password', type='password', value='',size=35)
         br
         br
         br
         .submit_btn
-          button(type='submit') Login
+          button(type='submit') 
+            p Login
         br
 
       a(href='/')
-        button  Home Page
+        button  
+          p Home Page
 
 
 

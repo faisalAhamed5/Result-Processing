@@ -15,7 +15,7 @@ html(lang='en')
       br
       for i in depts
         a(href="/printMarks/"+i.dept_id+'/')
-          button #{i.dept_id}
+          button.indexpage #{i.dept_id}
         br
         br
     if sessions
@@ -24,7 +24,7 @@ html(lang='en')
       br
       for i in sessions
         a(href=""+i.session_id+'/')
-          button #{i.session_id}
+          button.indexpage #{i.session_id}
         br
         br
     if semesters
@@ -42,9 +42,10 @@ html(lang='en')
       br
       for work in works
         a(href=''+work.sub_id)
-          button #{work.sub_id}
+          button.indexpage #{work.sub_id}
+          br
+          br
         |
         |
         |
 
-        

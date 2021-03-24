@@ -17,7 +17,7 @@ html(lang='en')
         br
         for work in works
           a(href='/Teacher/reviewResult30/' + work.session_id +'/'+work.semester+'/'+work.sub_id+'/') 
-            button #{work.session_id} #{work.semester} semester #{work.sub_id}
+            button.indexpage #{work.session_id} #{work.semester} semester #{work.sub_id}
             br
           br
 
@@ -132,7 +132,7 @@ html(lang='en')
               th #{result.m1}
               th
               th
-              
+
               th.hide1
                 button(type="submit",value="submit",onclick=`ResultDelete('${result.result_id}')`) Delete
               th.hide1 ----

@@ -15,13 +15,13 @@ html(lang='en')
   br
   for work in works
     a(href="/Teacher/chairman/"+work.session_id+'/'+work.semester+'/')
-      button #{work.session_id} #{work.semester} Semester
+      button.indexpage #{work.session_id} #{work.semester} Semester
     br
     br
   br
   for work in works
     a(href="/Teacher/chairman/supplyImprove/"+work.session_id+'/'+work.semester+'/')
-      button #{work.session_id} #{work.semester} Semester Suppli & Improvement
+      button.indexpage #{work.session_id} #{work.semester} Semester Supple. & Improvement
     br
     br
   br
@@ -29,13 +29,13 @@ html(lang='en')
   h2 Review before Combining
   br
   a(href="/Teacher/chairman/combineReview")
-    button  Review
+    button.indexpage  Review
   br
   br
   h2 Combine External and Internal Result
   br
   a(href="/Teacher/chairman/combine")
-    button  Combine
+    button.indexpage  Combine
   br
   br
   br

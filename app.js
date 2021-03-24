@@ -31,8 +31,19 @@ app.locals.moment = require('moment');
 app.use(flash());
 //session
 const sess_id = "resultProcessing123";
+const {
+  Node_env = 'development'
+} = process.env;
+const IN_PROD = Node_env === 'production';
 app.use(session({
-  secret:sess_id,
+  secret: sess_id,
+  resave: false,
+  saveUninitialized:false,
+  cookie: {
+    maxAge: 30 * 24 * 60 * 60 * 1000 ,
+    sameSite: true,
+    secure:IN_PROD,
+  }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
