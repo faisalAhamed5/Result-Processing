@@ -1,6 +1,3 @@
-
-
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -33,26 +30,8 @@ app.locals.moment = require('moment');
 
 app.use(flash());
 //session
-const TWO_HOURS = 1000 * 60 * 60 * 2;
-const { Node_env = 'development',
-  SESS_lifetime = TWO_HOURS,
-  SESS_NAME = 'sid',
-  SESS_SECRET='resultPros/All/'
-} = process.env;
-const IN_PROD = Node_env === 'production';
-app.use(session({
-  name: SESS_NAME,
-  resave: false,
-  saveUninitialized: false,
-  secret: SESS_SECRET,
-  createTableIfMissing: true,
-  store: new (require('connect-pg-simple')(session))(),
-  cookie: {
-    maxAge: SESS_lifetime,
-    sameSite: true,
-    secure: IN_PROD,
-  }
-}));
+
+app.use(session());
 app.use(passport.initialize());
 app.use(passport.session());
 
