@@ -20,6 +20,29 @@ body{
     
 }
 
+header {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #25ABEE;
+    padding: 10px 1%;
+    color: white;
+    position: relative;
+}
+
+header>h1>p {
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.1em;
+}
+
+header>h1 {
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.3em;
+}
+
 canvas{
 position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%;background-size: cover;
 }
@@ -44,11 +67,22 @@ position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 
   padding-bottom: 3px;
 }
 
-.form_input {
- 
+
+a :hover {
+  cursor: pointer;
+  background-color: #f8f8ff;
+  color: black;
+  font-weight: bolder;
+  transition: ease-in 0.3s;
+}
+.navbar a :hover {
+  cursor: pointer;
+  background-color: #f8f8ff;
+  color: black;
+  font-weight: bolder;
+  transition: ease-in 0.3s;
   
 }
-
 .container input[type="email"],
 [type="password"] {
   border: none;
@@ -118,4 +152,17 @@ a{
 
 p{
   font-size: 2em;
+}
+
+.nav-ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 2px;
+ font-size: .8em;
+}
+
+.navbar{
+  display: inline;
+      padding-top: 5px;
+
 }
