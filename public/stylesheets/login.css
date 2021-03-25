@@ -105,14 +105,6 @@ a :hover {
 }
 
 
-a :hover {
-  cursor: pointer;
-  background-color: #f8f8ff;
-  color: black;
-  font-weight: bolder;
-  transition: ease-in 0.1s;
-}
-
 
 
 label a {
@@ -129,7 +121,8 @@ label a {
   font-weight: bold;
   outline: none;
   color: azure;
-  background-color:#5A6074;
+  background-color:#1A73E8;
+  font-size: .8em;
   
 }
 button{
@@ -169,7 +162,8 @@ p{
   list-style: none;
   display: inline-block;
   padding: 2px;
- font-size: .8em;
+ font-size: 1.1em;
+ font-weight: bolder;
 }
 
 .navbar{

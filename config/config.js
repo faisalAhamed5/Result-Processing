@@ -1,5 +1,7 @@
 
+/*
 
+*/
 module.exports = {
   "development": {
     "username": "itrrsbnqkoflxg",
@@ -7,8 +9,14 @@ module.exports = {
     "database": "dat4u3471vmmnl",
     "host": "ec2-52-6-178-202.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "port": 5432,
-     
+    "port": 5432,/*
+     "protocol": 'postgres',
+    "dialectOptions": {
+        "ssl": {
+            "require": true,
+            "rejectUnauthorized": false
+        }
+    }*/
   },
   "test": {
     "username": "itrrsbnqkoflxg",
@@ -29,10 +37,10 @@ module.exports = {
      
   }
 };
-
 
 
 /*
+
 module.exports = {
   "development": {
     "username": "test",
@@ -59,4 +67,9 @@ module.exports = {
     "port": 5432
   }
 };
+
+
 */
+
+
+
